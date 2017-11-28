@@ -38,7 +38,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\MemoriaRepository.cs" />
+    <Compile Include="Assets\TorreRepository.cs" />
     <Compile Include="Assets\PlacaRepository.cs" />
+    <Compile Include="Assets\MicroRepository.cs" />
+    <Compile Include="Assets\TarjetaRepository.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

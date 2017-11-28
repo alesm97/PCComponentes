@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace PCComponentes
 {
-	public class PlacaRepository
-	{
+	public class MemoriaRepository
+    {
 		public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
-		public PlacaRepository(string dbPath)
+		public MemoriaRepository(string dbPath)
 		{
             conn = new SQLiteAsyncConnection(dbPath);
-            conn.CreateTableAsync<Placa>().Wait();
+            conn.CreateTableAsync<Memoria>().Wait();
 		}
 
-		public async Task AddNewPlacaAsync(string id, string nombre, double precio)
+		public async Task AddNewMemoriaAsync(string id, string nombre, double precio)
 		{
 			int result = 0;
 			try
@@ -27,7 +27,7 @@ namespace PCComponentes
 				if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(id) && precio>=0)
 					throw new Exception("Incorrect data.");
 
-                result = await conn.InsertAsync(new Placa() { Nombre = nombre , Id = id , Precio = precio});
+                result = await conn.InsertAsync(new Memoria() { Nombre = nombre , Id = id , Precio = precio});
 
 				//StatusMessage = string.Format("{0} record(s) added [Name: {1})", result, nombre);
 			}
@@ -38,13 +38,13 @@ namespace PCComponentes
 
 		}
 
-		public async Task<List<Placa>> GetAllPlacasAsync()
+		public async Task<List<Memoria>> GetAllTorreAsync()
 		{
-            List<Placa> lista = new List<Placa>();
+            List<Memoria> lista = new List<Memoria>();
 
             try
             {
-                lista = await conn.Table<Placa>().ToListAsync();
+                lista = await conn.Table<Memoria>().ToListAsync();
 
             }
             catch (Exception ex)
