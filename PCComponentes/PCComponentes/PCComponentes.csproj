@@ -38,19 +38,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\MemoriaRepository.cs" />
-    <Compile Include="Assets\TorreRepository.cs" />
-    <Compile Include="Assets\PlacaRepository.cs" />
-    <Compile Include="Assets\MicroRepository.cs" />
-    <Compile Include="Assets\TarjetaRepository.cs" />
+    <Compile Include="Assets\UsuariosRepository.cs" />
+    <Compile Include="Assets\ProductosRepository.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Tarjeta.cs" />
-    <Compile Include="Models\Memoria.cs" />
-    <Compile Include="Models\Torre.cs" />
-    <Compile Include="Models\Micro.cs" />
-    <Compile Include="Models\Placa.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

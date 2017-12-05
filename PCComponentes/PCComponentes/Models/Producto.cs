@@ -7,15 +7,18 @@ using SQLite;
 
 namespace PCComponentes.Models
 {
-    [Table("tarjeta")]
-    public class Tarjeta
+    [Table("producto")]
+    public class Producto
     {
+
         [PrimaryKey]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [MaxLength(250)]
         public string Nombre { get; set; }
 
         public double Precio { get; set; }
+        [MaxLength(7)]
+        public string Tipo { get; set; }
 
     }
 }

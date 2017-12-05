@@ -9,11 +9,18 @@ namespace PCComponentes
 {
     public partial class App : Application
     {
-        public App()
+
+        public static ProductosRepository productosRepository { get; set; }
+        public static UsuariosRepository usuariosRepository { get; set; }
+
+        public App(string filename)
         {
             InitializeComponent();
 
-            MainPage = new PCComponentes.MainPage();
+            productosRepository = new ProductosRepository(filename);
+            usuariosRepository = new UsuariosRepository(filename);
+
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

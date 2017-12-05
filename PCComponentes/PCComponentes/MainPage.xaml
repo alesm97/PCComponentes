@@ -4,8 +4,35 @@
              xmlns:local="clr-namespace:PCComponentes"
              x:Class="PCComponentes.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
+    <StackLayout Orientation="Vertical">
+        <Label Text="Bienvenido a SaladilloWare!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Usuario: "
+        VerticalOptions="Start"
+        HorizontalOptions="Start"
+        />
+            <Entry x:Name="txtUser"
+               VerticalOptions="Start"
+               HorizontalOptions="Start"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Usuario: "
+        VerticalOptions="Start"
+        HorizontalOptions="Start"
+        />
+            <Entry x:Name="txtUser"
+               VerticalOptions="Start"
+               HorizontalOptions="Start"/>
+        </StackLayout>
+        <Button x:Name="btnStart"
+                Text="Iniciar Sesión"/>
+        <Label x:Name="lblError"/>
+    </StackLayout>
+	
+    
+    
 
 </ContentPage>

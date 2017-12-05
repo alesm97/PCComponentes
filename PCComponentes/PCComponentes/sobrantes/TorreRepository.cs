@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace PCComponentes
 {
-	public class TarjetaRepository
-	{
+	public class TorreRepository
+    {
 		public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
-		public TarjetaRepository(string dbPath)
+		public TorreRepository(string dbPath)
 		{
             conn = new SQLiteAsyncConnection(dbPath);
-            conn.CreateTableAsync<Tarjeta>().Wait();
+            conn.CreateTableAsync<Productos>().Wait();
 		}
 
-		public async Task AddNewTarjetaAsync(string id, string nombre, double precio)
+		public async Task AddNewTorreAsync(string id, string nombre, double precio)
 		{
 			int result = 0;
 			try
@@ -27,7 +27,7 @@ namespace PCComponentes
 				if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(id) && precio>=0)
 					throw new Exception("Incorrect data.");
 
-                result = await conn.InsertAsync(new Tarjeta() { Nombre = nombre , Id = id , Precio = precio});
+                result = await conn.InsertAsync(new Torre() { Nombre = nombre , Id = id , Precio = precio});
 
 				//StatusMessage = string.Format("{0} record(s) added [Name: {1})", result, nombre);
 			}
@@ -38,13 +38,13 @@ namespace PCComponentes
 
 		}
 
-		public async Task<List<Tarjeta>> GetAllPlacasAsync()
+		public async Task<List<Torre>> GetAllTorreAsync()
 		{
-            List<Tarjeta> lista = new List<Tarjeta>();
+            List<Torre> lista = new List<Torre>();
 
             try
             {
-                lista = await conn.Table<Tarjeta>().ToListAsync();
+                lista = await conn.Table<Torre>().ToListAsync();
 
             }
             catch (Exception ex)

@@ -15,13 +15,14 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PCComponentes.UWP
 {
+    
     public sealed partial class MainPage
     {
         public MainPage()
         {
             this.InitializeComponent();
-
-            LoadApplication(new PCComponentes.App());
+            string dbPath = FileAccessHelper.GetLocalFilePath("PCComponentes.db3");
+            LoadApplication(new PCComponentes.App(dbPath));
         }
     }
 }
