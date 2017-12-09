@@ -18,6 +18,10 @@ namespace PCComponentes
             conn.CreateTableAsync<Usuario>().Wait();
 		}
 
+        /// <summary>
+        /// Obtener todos los usuarios
+        /// </summary>
+        /// <returns>lista de usuarios</returns>
 		public async Task<List<Usuario>> GetAllUsuariosAsync()
 		{
             List<Usuario> lista = new List<Usuario>();

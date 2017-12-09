@@ -1,4 +1,5 @@
 ﻿using PCComponentes.Models;
+using PCComponentes.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,15 @@ namespace PCComponentes
 {
     public partial class VendorPage : ContentPage
     {
+        private VendorVM viewModel;
+
         public VendorPage(Usuario usuario)
         {
             InitializeComponent();
-            
-            
+
+            viewModel = new VendorVM(usuario);
+            BindingContext = viewModel;
+
             btnDesconectar.Clicked += desconectar;
         }
 

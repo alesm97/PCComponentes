@@ -15,13 +15,6 @@ namespace PCComponentes
         {
             InitializeComponent();
             
-            
-            //btnStart.Clicked += comprobarUsuario;
         }
-
-        /*private async Task comprobarUsuarioAsync()
-        {
-            List<Usuario> usuarios = new List<Usuario>(await App.usuariosRepository.GetAllProductosAsync);
-        }*/
     }
 }

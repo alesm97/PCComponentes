@@ -20,13 +20,16 @@ namespace PCComponentes.ViewModel
             }
         }
 
+        #region atributos
         //Mensaje de bienvenida
         private String mensajeBienvenida;
         //Usuario actual
         private Usuario usuario;
         //Lista de pedidos
         private List<ListaPedidoItem> listaPedidos;
+        #endregion
 
+        #region propiedades
         public VendorVM(Usuario usuario)
         {
             this.usuario = usuario;
@@ -67,7 +70,12 @@ namespace PCComponentes.ViewModel
                 }
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Cargamos los pedidos
+        /// </summary>
+        /// <remarks>Cargamos los pedidos de la base de datos y mostramos el mensaje de bienvenida</remarks>
         public async void InicializarValores()
         {
             MensajeBienvenida = String.Format("Bienvenido {0}", usuario.Nombre);
@@ -99,6 +107,9 @@ namespace PCComponentes.ViewModel
             ListaPedidos = ListaCompleta;
         }
 
+        /// <summary>
+        /// Desconectar y volver a la página principal
+        /// </summary>
         public void Desconectar()
         {
             App.Current.MainPage = new MainPage();

@@ -10,10 +10,16 @@ namespace PCComponentes.ViewModel
 {
     class LoginVM : INotifyPropertyChanged
     {
+        #region atributos
         private string userName = "";
         private string userPass = "";
         private string errorMessage = "";
+        #endregion
 
+        #region propiedades
+        /// <summary>
+        /// Nombre del usuario
+        /// </summary>
         public string UserName
         {
             get
@@ -54,6 +60,9 @@ namespace PCComponentes.ViewModel
             }
         }
 
+        /// <summary>
+        /// Mensaje de error
+        /// </summary>
         public string ErrorMessage
         {
             get
@@ -72,6 +81,7 @@ namespace PCComponentes.ViewModel
                 }
             }
         }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
         public virtual void OnPropertyChanged(string propertyName)
@@ -83,6 +93,12 @@ namespace PCComponentes.ViewModel
             }
         }
 
+        /// <summary>
+        /// Inicia sesión
+        /// </summary>
+        /// <remarks>
+        /// Comprueba que se hayan introducidos los datos correctamente y comprueba que el usuario exista y su tipo, cargando la página de admin o la de cliente
+        /// </remarks>
         public async void Login()
         {
             if (ComprobarCamposLogin())
@@ -110,6 +126,11 @@ namespace PCComponentes.ViewModel
             }
         }
 
+        /// <summary>
+        /// Comprueba los campos de entrada
+        /// </summary>
+        /// <returns>bool de estado</returns>
+        /// <remarks>Comprueba que estén rellenos los campos de usuario y contraseña</remarks>
         private bool ComprobarCamposLogin()
         {
             bool correct = true;

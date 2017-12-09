@@ -5,25 +5,53 @@
              x:Class="PCComponentes.ClientPage">
 
     <ContentPage>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="5*" />
-            </Grid.ColumnDefinitions>
-            <StackLayout Grid.Row="0" Grid.Column="0">
+        <StackLayout>    
+            <StackLayout Orientation="Horizontal">
                 <Label x:Name="lblWelcome"
-                           Text="{Binding WelcomeMessage}"/>
-                <Button x:Name="btnDesconectar" Text="Desconectar"/>
+                            Text="{Binding WelcomeMessage}" HorizontalOptions="End"/>
+                <Button x:Name="btnDesconectar" Text="Desconectar" HorizontalOptions="End"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label x:Name="lblMicro" Text="Procesador"/>
+                    <Picker x:Name="pckMicro" ItemsSource="{Binding ListaMicro}"
+                            SelectedIndex="{Binding IndiceMicro}"/>
+                    <Label x:Name="lblMemoria" Text="Memoria"/>
+                    <Picker x:Name="pckMemoria" ItemsSource="{Binding ListaMemoria}"
+                            SelectedIndex="{Binding IndiceMemoria}"/>
+                    <Label x:Name="lblPlaca" Text="Placa"/>
+                    <Picker x:Name="pckPlaca" ItemsSource="{Binding ListaPlaca}"
+                            SelectedIndex="{Binding IndicePlaca}"/>
+                    <Label x:Name="lblTarjeta" Text="Tarjeta"/>
+                    <Picker x:Name="pckTarjeta" ItemsSource="{Binding ListaTarjeta}"
+                            SelectedIndex="{Binding IndiceTarjeta}"/>
+                    <Label x:Name="lblTorre" Text="Torre"/>
+                    <Picker x:Name="pckTorre" ItemsSource="{Binding ListaTorre}"
+                            SelectedIndex="{Binding IndiceTorre}"/>
+                </StackLayout>
+                <StackLayout>
+                    <ListView x:Name="lstPedidoActual"
+                          ItemsSource="{Binding PedidoActual}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Nombre}"/>
+                                        <Label Text="{Binding Precio}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Label x:Name="lblPrecioTotal"
+                       Text="{Binding PrecioTotal}"/>
+                    <Button x:Name="btnConfirmar" Text="Confirmar"
+                        IsEnabled="{Binding EstadoConfirmar}"/>
+                </StackLayout>
             </StackLayout>
             
-            
-            
-        </Grid>
-
-</ContentPage>
+        </StackLayout>
+    </ContentPage>
 
 
 </ContentPage>

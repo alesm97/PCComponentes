@@ -21,9 +21,11 @@ namespace PCComponentes
             viewModel = new LoginVM();
 
             BindingContext = viewModel;
+
+            btnStart.Clicked += login;
         }
 
-        private void btnStartClick(object sender, EventArgs e)
+        private void login(object sender, EventArgs e)
         {
             viewModel.Login();
         }
