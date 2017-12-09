@@ -12,7 +12,7 @@ namespace PCComponentes.Models
     {
 
         [PrimaryKey]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [MaxLength(250)]
         public string Nombre { get; set; }
 

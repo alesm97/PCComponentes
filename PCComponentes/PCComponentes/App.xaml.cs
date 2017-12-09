@@ -10,15 +10,17 @@ namespace PCComponentes
     public partial class App : Application
     {
 
-        public static ProductosRepository productosRepository { get; set; }
-        public static UsuariosRepository usuariosRepository { get; set; }
+        public static ProductosRepository ProductosRepository { get; set; }
+        public static UsuariosRepository UsuariosRepository { get; set; }
+        public static PedidosRepository PedidosRepository { get; internal set; }
 
         public App(string filename)
         {
             InitializeComponent();
 
-            productosRepository = new ProductosRepository(filename);
-            usuariosRepository = new UsuariosRepository(filename);
+            ProductosRepository = new ProductosRepository(filename);
+            UsuariosRepository = new UsuariosRepository(filename);
+            PedidosRepository = new PedidosRepository(filename);
 
             MainPage = new MainPage();
         }

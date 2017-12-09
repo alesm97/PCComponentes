@@ -10,29 +10,27 @@
            HorizontalOptions="Center" />
 
         <StackLayout Orientation="Horizontal">
-            <Label Text="Usuario: "
-        VerticalOptions="Start"
-        HorizontalOptions="Start"
-        />
-            <Entry x:Name="txtUser"
-               VerticalOptions="Start"
-               HorizontalOptions="Start"/>
+
+            <Label Text="Usuario: "/>
+            <Entry Text="{Binding UserName, Mode=TwoWay}" 
+                   x:Name="txtUser" />
+
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Usuario: "
-        VerticalOptions="Start"
-        HorizontalOptions="Start"
-        />
-            <Entry x:Name="txtUser"
-               VerticalOptions="Start"
-               HorizontalOptions="Start"/>
+
+            <Label Text="Contraseña: "/>
+            <Entry Text="{Binding UserPass, Mode=TwoWay}" 
+                   x:Name="txtPass" 
+                   IsPassword="true"/>
+
         </StackLayout>
         <Button x:Name="btnStart"
-                Text="Iniciar Sesión"/>
-        <Label x:Name="lblError"/>
-    </StackLayout>
-	
-    
-    
+                Text="Iniciar Sesión"
+                Clicked="btnStartClick"/>
+        <Label x:Name="lblError" 
+               TextColor="Red" 
+               Text="{Binding ErrorMessage}"/>
 
+    </StackLayout>
+    
 </ContentPage>

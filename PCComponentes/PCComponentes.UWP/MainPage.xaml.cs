@@ -22,6 +22,7 @@ namespace PCComponentes.UWP
         {
             this.InitializeComponent();
             string dbPath = FileAccessHelper.GetLocalFilePath("PCComponentes.db3");
+
             LoadApplication(new PCComponentes.App(dbPath));
         }
     }

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PCComponentes"
+             x:Class="PCComponentes.VendorPage">
+
+    <ContentPage>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <Label x:Name="lblWelcome"
+                           Text="{Binding WelcomeMessage}"/>
+                <Button x:Name="btnPrecios" Text="Precios"/>
+                <Button x:Name="btnDesconectar" Text="Desconectar"/>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1">
+                <Label x:Name="lblPedidos" Text="Pedidos"/>
+                <ListView x:Name="lstPedidos" ItemsSource="{Binding ListaPedidos}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding NombreUsuario}"/>
+                                    <Label Text="{Binding NombrePlaca}"/>
+                                    <Label Text="{Binding NombreMicroprocesador}"/>
+                                    <Label Text="{Binding NombreTorre}"/>
+                                    <Label Text="{Binding NombreMemoria}"/>
+                                    <Label Text="{Binding NombreTarjetaGrafica}"/>
+                                    <Label Text="{Binding PrecioPedido}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+
+</ContentPage>
+
+
+</ContentPage>

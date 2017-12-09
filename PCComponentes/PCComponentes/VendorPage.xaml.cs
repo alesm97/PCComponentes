@@ -1,5 +1,4 @@
 ﻿using PCComponentes.Models;
-using PCComponentes.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +9,19 @@ using Xamarin.Forms.PlatformConfiguration;
 
 namespace PCComponentes
 {
-    public partial class MainPage : ContentPage
+    public partial class VendorPage : ContentPage
     {
-        private LoginVM viewModel;
-
-        public MainPage()
+        public VendorPage(Usuario usuario)
         {
             InitializeComponent();
-
-            viewModel = new LoginVM();
-
-            BindingContext = viewModel;
+            
+            
+            btnDesconectar.Clicked += desconectar;
         }
 
-        private void btnStartClick(object sender, EventArgs e)
+        private void desconectar(object sender, EventArgs e)
         {
-            viewModel.Login();
+            App.Current.MainPage = new MainPage();
         }
     }
 }

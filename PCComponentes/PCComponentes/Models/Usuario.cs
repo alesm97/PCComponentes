@@ -11,7 +11,7 @@ namespace PCComponentes.Models
     public class Usuario
     {
 
-        [PrimaryKey,MaxLength(4)]
+        [PrimaryKey]
         public string Id { get; set; }
         [MaxLength(25),NotNull]
         public string Nombre { get; set; }
